@@ -1,0 +1,121 @@
+.profile-container {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 800px;
+    padding-left: 0px;
+  }
+  
+  .profile-header {
+    position: relative;
+    text-align: center;
+  }
+  
+  .profile-header-img {
+    width: 100%;
+    height: 340px;
+  }
+  
+  .profile-main-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -75px;
+  }
+  
+  @media only screen and (min-width: 800px) {
+    .profile-main-info {justify-content: left; padding: 20px;}
+  }
+
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid white;
+  }
+  
+  .profile-details {
+    text-align: center;
+  }
+  
+  .profile-details h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .profile-details .verified {
+    color: green;
+  }
+  
+  .profile-contact-info {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .profile-contact-info p {
+    margin: 5px 0;
+  }
+  
+  .edit-profile-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-profile-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .profile-section {
+    margin-top: 30px;
+    padding-inline: 5px;
+  }
+  
+  .profile-section h3 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+  }
+  
+  .profile-places {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  
+  .profile-languages, .profile-pricing {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .place-card, .pricing-card {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+    width: 250px;
+    height: 230px;
+  }
+
+
+  .place-images{
+    height: 190px;
+    width: 250px;
+  }
+  
+  .language-tag {
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .qualifications-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+  }
