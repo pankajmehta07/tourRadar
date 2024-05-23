@@ -2,7 +2,8 @@ import React from "react";
 import "./Profile.css";
 import profileHeaderImg from "../assets/patan.jpg";
 import profilePhotoImg from "../assets/Atul.jpg";
-import placeImg from "../assets/images.jpg";
+import placeImage1 from "../assets/images.jpg";
+import PlaceCard from "./PlaceCard";
 
 const Profile = () => {
   const userProfile = {
@@ -17,7 +18,20 @@ const Profile = () => {
     currency: "Nrs",
     phone: "9869696969",
     email: "example@gmail.com",
-    places: ["Patan Dhoka", "Patan Dhoka", "Patan Dhoka"],
+    places: [
+      {
+        placeName: "Patan Dhoka",
+        placeImage: placeImage1,
+      },
+      {
+        placeName: "Patan Dhoka",
+        placeImage: placeImage1,
+      },
+      {
+        placeName: "Patan Dhoka",
+        placeImage: placeImage1,
+      },
+    ],
     languages: ["Nepali", "Nepali", "Nepali"],
     pricing: {
       hourly: { rate: 1000, negotiable: false },
@@ -29,45 +43,53 @@ const Profile = () => {
     ],
     qualificationDescriptions: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "Haha hello lol"
     ],
   };
 
   return (
     <div className="profile-container">
       <div className="profile-header">
-        <img
-          className="profile-header-img"
-          src={profileHeaderImg}
-          alt="https://via.placeholder.com/1500x500"
-        />
-        <div className="profile-main-info">
-          <img
-            className="profile-photo"
-            src={profilePhotoImg}
-            alt="https://via.placeholder.com/150"
-          />
-        </div>
-        <div className="profile-details">
-          <h2>
-            {userProfile.name} <span className="verified">&#x2714;</span>
-          </h2>
-          <p>
-            {userProfile.rating} <span>&#9733;&#9733;&#9733;&#9733;</span> (
-            {userProfile.reviews} reviews)
-          </p>
-        </div>
-        <div className="profile-rate">
-          <p>
-            <strong>
-              {userProfile.currency} {userProfile.rate}
-            </strong>{" "}
-            / hour
-          </p>
-        </div>
-        <div className="profile-contact-info">
-          <button className="edit-profile-button">
-            <i className="fas fa-edit">Edit Profile</i>
-          </button>
+      <img
+        className="profile-header-img"
+        src={profileHeaderImg}
+        alt="https://via.placeholder.com/1500x500"
+      />
+        <div className="image-and-details">
+          <div className="profile-main-info">
+            <img
+              className="profile-photo"
+              src={profilePhotoImg}
+              alt="https://via.placeholder.com/150"
+            />
+          </div>
+
+          <div className="profile-details">
+            <div className="profile-details-left">
+              <h2>
+                {userProfile.name} <span className="verified">&#x2714;</span>
+              </h2>
+              <p className="profile-name">
+                {userProfile.rating} <span>&#9733;&#9733;&#9733;&#9733;</span> (
+                {userProfile.reviews} reviews)
+              </p>
+            </div>
+            <div className="profile-details-right">
+              <div className="profile-rate">
+                <p>
+                  <strong>
+                    {userProfile.currency} {userProfile.rate}
+                  </strong>{" "}
+                  / hour
+                </p>
+              </div>
+              <div className="profile-contact-info">
+                <button className="edit-profile-button">
+                  <i className="fas fa-edit">Edit Profile</i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -75,14 +97,11 @@ const Profile = () => {
         <h3>Can Guide</h3>
         <div className="profile-places">
           {userProfile.places.map((place, index) => (
-            <div className="place-card" key={index}>
-              <div className="place-images">
-                <img src={placeImg} alt={place} />
-              </div>
-              <div className="place-name">
-                <p>{place}</p>
-              </div>
-            </div>
+            <PlaceCard
+              key={index}
+              placeImage={place.placeImage}
+              placeName={place.placeName}
+            />
           ))}
         </div>
       </div>
@@ -130,15 +149,13 @@ const Profile = () => {
       <div className="profile-section">
         <h3>Qualifications</h3>
         <ol className="qualifications-list">
-          {userProfile.qualifications.map(
-            (qualification, qualificationDescription, index) => (
-              <li key={index}>
-                {qualification}
-                <br />
-                {qualificationDescription}
-              </li>
-            )
-          )}
+          {userProfile.qualifications.map((qualification, index) => (
+            <li key={index}>
+              {qualification}
+              <br />
+              {userProfile.qualificationDescriptions[index]}
+            </li>
+          ))}
         </ol>
       </div>
     </div>

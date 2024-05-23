@@ -1,121 +1,161 @@
 .profile-container {
-    font-family: Arial, sans-serif;
-    margin: 0 auto;
-    max-width: 800px;
-    padding-left: 0px;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-left: 0px;
+}
+
+.profile-header {
+  position: relative;
+  text-align: center;
+}
+
+.profile-header-img {
+  width: 100%;
+  height: 340px;
+}
+
+.profile-main-info {
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid white;
+  margin-top: -75px;
   
-  .profile-header {
-    position: relative;
-    text-align: center;
-  }
-  
-  .profile-header-img {
-    width: 100%;
-    height: 340px;
-  }
-  
+}
+
+.image-and-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 95%; */
+  /* margin-left: 20px; */
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  justify-content: center;
+  width: 100%;
+}
+
+/* .profile-details-left {
+  text-align: left;
+}
+
+.profile-details-right {
+  text-align: right;
+} */
+
+@media only screen and (min-width: 800px) {
   .profile-main-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -75px;
+      padding: 20px;
+      margin-top: 0;
   }
-  
-  @media only screen and (min-width: 800px) {
-    .profile-main-info {justify-content: left; padding: 20px;}
+  .image-and-details {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
   }
-
-  .profile-photo {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 5px solid white;
-  }
-  
   .profile-details {
-    text-align: center;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
   }
-  
-  .profile-details h2 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .profile-details .verified {
-    color: green;
-  }
-  
-  .profile-contact-info {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .profile-contact-info p {
-    margin: 5px 0;
-  }
-  
-  .edit-profile-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .edit-profile-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .profile-section {
-    margin-top: 30px;
-    padding-inline: 5px;
-  }
-  
-  .profile-section h3 {
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
-  }
-  
-  .profile-places {
-    display: flex;
-    margin-top: 10px;
-    width: 100%;
-    overflow-x: scroll;
-  }
-  
-  .profile-languages, .profile-pricing {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-    width: 100%;
-  }
-  
-  .place-card, .pricing-card {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin: 10px;
-    width: 250px;
-    height: 230px;
-  }
+}
 
+.profile-details h2 {
+  margin: 0;
+  font-size: 24px;
+}
 
-  .place-images{
-    height: 190px;
-    width: 250px;
-  }
-  
-  .language-tag {
-    background-color: #eee;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 5px;
-  }
-  
-  .qualifications-list {
-    list-style-type: decimal;
-    padding-left: 20px;
-  }
+.profile-details .verified {
+  color: green;
+}
+
+.profile-contact-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-contact-info p {
+  margin: 5px 0;
+}
+
+.edit-profile-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-profile-button:hover {
+  background-color: #0056b3;
+}
+
+.profile-section {
+  margin-top: 30px;
+  padding-inline: 5px;
+}
+
+.profile-section h3 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.ui.card {
+  margin: 20px;
+}
+
+.profile-places {
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.profile-languages,
+.profile-pricing {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.place-card,
+.pricing-card {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 10px;
+  width: 250px;
+  height: 230px;
+}
+
+.place-images {
+  height: 190px;
+  width: 250px;
+}
+
+.language-tag {
+  background-color: #eee;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.qualifications-list {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
