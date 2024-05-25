@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Profile.module.css";
 import placeImage1 from "../assets/images.jpg";
 import PlaceCard from "./PlaceCard";
 import ImageUpload from "./ImageUpload";
 
 const Profile = () => {
+  const [isEditMode, setIsEditMode] = useState(false);
+
+  const toggleEditMode = () => {
+    setIsEditMode(!isEditMode);
+  };
+
   const userProfile = {
     name: "Atul Tiwari",
     id: "12345",
@@ -47,10 +53,10 @@ const Profile = () => {
   return (
     <div className={styles["profile-container"]}>
       <div className={styles["profile-header"]}>
-      <ImageUpload header={true} />
+        <ImageUpload header={true} isEditMode={isEditMode} />
         <div className={styles["image-and-details"]}>
           <div className={styles["profile-main-info"]}>
-            <ImageUpload header={false} />
+            <ImageUpload header={false} isEditMode={isEditMode} />
           </div>
 
           <div className={styles["profile-details"]}>
@@ -73,8 +79,11 @@ const Profile = () => {
                 </p>
               </div>
               <div className={styles["profile-contact-info"]}>
-                <button className={styles["edit-profile-button"]}>
-                  <i className={styles["fas fa-edit"]}>Edit Profile</i>
+                <button
+                  className={`${styles["edit-profile-button"]} ${isEditMode ? styles["done"] : styles["edit"]}`}
+                  onClick={toggleEditMode}
+                >
+                  {isEditMode ? "Done" : "Edit Profile"}
                 </button>
               </div>
             </div>

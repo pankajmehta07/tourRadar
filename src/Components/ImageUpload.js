@@ -3,7 +3,7 @@ import defaultImage from "../assets/upload.svg";
 import "./ImageUpload.Header.css";
 import "./ImageUpload.Profile.css";
 
-function ImageUpload({ header }) { 
+function ImageUpload({ header, isEditMode }) { 
   const [image, setImage] = useState(null);
   const hiddenFileInput = useRef(null);
 
@@ -69,7 +69,9 @@ function ImageUpload({ header }) {
   };
 
   const handleClick = (event) => {
-    hiddenFileInput.current.click();
+    if (isEditMode) {
+      hiddenFileInput.current.click();
+    }
   };
 
   return (

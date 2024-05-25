@@ -95,8 +95,18 @@ h2{
   cursor: pointer;
 }
 
-.edit-profile-button:hover {
-  background-color: #0056b3;
+.edit-profile-button:hover{
+  opacity: 0.8;
+}
+
+.edit {
+  background-color: #007bff;
+  color: white;
+}
+
+.done {
+  background-color: #2cf781;
+  color: white;
 }
 
 .profile-section {
