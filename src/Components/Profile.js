@@ -1,9 +1,8 @@
 import React from "react";
-import "./Profile.css";
-import profileHeaderImg from "../assets/patan.jpg";
-import profilePhotoImg from "../assets/Atul.jpg";
+import styles from "./Profile.module.css";
 import placeImage1 from "../assets/images.jpg";
 import PlaceCard from "./PlaceCard";
+import ImageUpload from "./ImageUpload";
 
 const Profile = () => {
   const userProfile = {
@@ -16,8 +15,6 @@ const Profile = () => {
     reviews: 69,
     rate: 1000,
     currency: "Nrs",
-    phone: "9869696969",
-    email: "example@gmail.com",
     places: [
       {
         placeName: "Patan Dhoka",
@@ -41,41 +38,33 @@ const Profile = () => {
       "6-month training in location guide",
       "6-month training in location guide",
     ],
-    qualificationDescriptions: [
+    qualificationDescription: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-      "Haha hello lol"
-    ],
+      "Hello haha lol"
+    ]
   };
 
   return (
-    <div className="profile-container">
-      <div className="profile-header">
-      <img
-        className="profile-header-img"
-        src={profileHeaderImg}
-        alt="https://via.placeholder.com/1500x500"
-      />
-        <div className="image-and-details">
-          <div className="profile-main-info">
-            <img
-              className="profile-photo"
-              src={profilePhotoImg}
-              alt="https://via.placeholder.com/150"
-            />
+    <div className={styles["profile-container"]}>
+      <div className={styles["profile-header"]}>
+      <ImageUpload header={true} />
+        <div className={styles["image-and-details"]}>
+          <div className={styles["profile-main-info"]}>
+            <ImageUpload header={false} />
           </div>
 
-          <div className="profile-details">
-            <div className="profile-details-left">
+          <div className={styles["profile-details"]}>
+            <div className={styles["profile-details-left"]}>
               <h2>
-                {userProfile.name} <span className="verified">&#x2714;</span>
+                {userProfile.name} <span className={styles["verified"]}>&#x2714;</span>
               </h2>
-              <p className="profile-name">
+              <p className={styles["profile-name"]}>
                 {userProfile.rating} <span>&#9733;&#9733;&#9733;&#9733;</span> (
                 {userProfile.reviews} reviews)
               </p>
             </div>
-            <div className="profile-details-right">
-              <div className="profile-rate">
+            <div className={styles["profile-details-right"]}>
+              <div className={styles["profile-rate"]}>
                 <p>
                   <strong>
                     {userProfile.currency} {userProfile.rate}
@@ -83,9 +72,9 @@ const Profile = () => {
                   / hour
                 </p>
               </div>
-              <div className="profile-contact-info">
-                <button className="edit-profile-button">
-                  <i className="fas fa-edit">Edit Profile</i>
+              <div className={styles["profile-contact-info"]}>
+                <button className={styles["edit-profile-button"]}>
+                  <i className={styles["fas fa-edit"]}>Edit Profile</i>
                 </button>
               </div>
             </div>
@@ -93,9 +82,9 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className="profile-section">
+      <div className={styles["profile-section"]}>
         <h3>Can Guide</h3>
-        <div className="profile-places">
+        <div className={styles["profile-places"]}>
           {userProfile.places.map((place, index) => (
             <PlaceCard
               key={index}
@@ -106,21 +95,21 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className="profile-section">
+      <div className={styles["profile-section"]}>
         <h3>Languages</h3>
-        <div className="profile-languages">
+        <div className={styles["profile-languages"]}>
           {userProfile.languages.map((language, index) => (
-            <span className="language-tag" key={index}>
+            <span className={styles["language-tag"]} key={index}>
               {language}
             </span>
           ))}
         </div>
       </div>
 
-      <div className="profile-section">
+      <div className={styles["profile-section"]}>
         <h3>Pricing (Nrs.)</h3>
-        <div className="profile-pricing">
-          <div className="pricing-card">
+        <div className={styles["profile-pricing"]}>
+          <div className={styles["pricing-card"]}>
             <p>
               <strong>Hourly</strong>
             </p>
@@ -131,7 +120,7 @@ const Profile = () => {
                 : "Non-negotiable"}
             </p>
           </div>
-          <div className="pricing-card">
+          <div className={styles["pricing-card"]}>
             <p>
               <strong>One day</strong>
             </p>
@@ -143,20 +132,19 @@ const Profile = () => {
             </p>
           </div>
         </div>
-        <p>*For up to 5-person group</p>
       </div>
 
-      <div className="profile-section">
+      <div className={styles["profile-section"]}>
         <h3>Qualifications</h3>
-        <ol className="qualifications-list">
+        <ul className={styles["qualifications-list"]}>
           {userProfile.qualifications.map((qualification, index) => (
             <li key={index}>
               {qualification}
               <br />
-              {userProfile.qualificationDescriptions[index]}
+              {userProfile.qualificationDescription[index]}
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </div>
   );

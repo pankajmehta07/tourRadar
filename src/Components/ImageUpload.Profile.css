@@ -1,0 +1,31 @@
+.image-upload-container.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-decoration-1.profile-box{
+    margin: 20px;
+
+}
+
+.img-display-before.profile-img-before {
+    cursor: pointer;
+    border: 2px dotted #ccc;
+    border-radius: 50%;
+    height: 160px;
+    width: 160px;
+    object-fit: none;
+    z-index: 1;
+}
+
+.img-display-after.profile-img-after {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    z-index: 1;
+    border: 4px solid white;
+    box-shadow: inset rgba(0, 0, 0, 0.1) -2px -1px 13px 6px;
+}

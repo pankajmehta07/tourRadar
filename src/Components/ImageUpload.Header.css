@@ -1,0 +1,28 @@
+.image-upload-container.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-decoration.header-box {
+    border-radius: 10px;
+}
+
+.box-decoration-1.header-box-1 {
+    cursor: pointer;
+}
+
+.img-display-before.header-img-before {
+    border: 2px dotted #ccc;
+    height: 340px;
+    max-width: 800px;
+    min-width: 800px;
+    object-fit: scale-down;
+}
+
+.img-display-after.header-img-after {
+    height: 340px;
+    width: 800px;
+    object-fit: cover;
+    /* border: none; */
+}
