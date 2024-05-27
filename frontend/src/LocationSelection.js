@@ -16,7 +16,7 @@ const LocationSelection = () => {
   const handleSearch = async () => {
     if (query.trim() === "") return;
 
-    const apiKey = "98d3643e37e2458aa8f337d545d36a8a"; // Replace with your OpenCage API key
+    const apiKey = "your_api_key_of_opencage"; // Replace this with your OpenCage API key. Maile pahila ko disable haneko xu hai. jhukkera active api key nai halexu, ani generic high entropy secret leaked vanyo
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(query)}&key=${apiKey}`;
 
     try {
