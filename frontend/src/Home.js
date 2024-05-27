@@ -1,8 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import profilePhotoImg from "./assets/Atul.jpg";
 
 const Home = () => {
+
+  const navigate = useNavigate();
+
+  const handleQuickGuideClick = () => {
+    navigate("/location-selection");
+  };
+
   return (
     <div>
       <header>
@@ -24,9 +31,7 @@ const Home = () => {
       </header>
       <div>
         <h1>Welcome to Tourist Guide</h1>
-        <Link to="/quick-guide">
-          <button>Quick Guide</button>
-        </Link>
+          <button onClick={handleQuickGuideClick}>Quick Guide</button>
       </div>
     </div>
   );

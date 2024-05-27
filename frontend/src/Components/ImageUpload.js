@@ -43,30 +43,30 @@ function ImageUpload({ header, isEditMode }) {
     };
   };
 
-  const handleUploadButtonClick = (file) => {
-    var myHeaders = new Headers();
-    const token = "adhgsdaksdhk938742937423";
-    myHeaders.append("Authorization", `Bearer ${token}`);
+  // const handleUploadButtonClick = (file) => {
+  //   var myHeaders = new Headers();
+  //   const token = "adhgsdaksdhk938742937423";
+  //   myHeaders.append("Authorization", `Bearer ${token}`);
 
-    var formdata = new FormData();
-    formdata.append("file", file);
+  //   var formdata = new FormData();
+  //   formdata.append("file", file);
 
-    var requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: formdata,
-      redirect: "follow",
-    };
+  //   var requestOptions = {
+  //     method: "POST",
+  //     headers: myHeaders,
+  //     body: formdata,
+  //     redirect: "follow",
+  //   };
 
-    fetch("https://trickuweb.com/upload/profile_pic", requestOptions)
-      .then((response) => response.text())
-      .then((result) => {
-        console.log(JSON.parse(result));
-        const profileurl = JSON.parse(result);
-        setImage(profileurl.img_url);
-      })
-      .catch((error) => console.log("error", error));
-  };
+  //   fetch("https://trickuweb.com/upload/profile_pic", requestOptions)
+  //     .then((response) => response.text())
+  //     .then((result) => {
+  //       console.log(JSON.parse(result));
+  //       const profileurl = JSON.parse(result);
+  //       setImage(profileurl.img_url);
+  //     })
+  //     .catch((error) => console.log("error", error));
+  // };
 
   const handleClick = (event) => {
     if (isEditMode) {

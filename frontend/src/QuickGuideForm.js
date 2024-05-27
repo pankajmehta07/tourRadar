@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { useLocation } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./QuickGuideForm.css";
 
 const QuickGuideForm = () => {
+  const location = useLocation();
+  const selectedLocations = useMemo(() => location.state?.selectedLocations || [], [location.state?.selectedLocations]);
+
   const [formData, setFormData] = useState({
-    places: ["Patan dhoka"],
-    numberOfPeople: 2,
+    places: selectedLocations,
+    numberOfPeople: 5,
     languages: ["English"],
     travelCoverage: true,
     foodCoverage: true,
@@ -14,18 +18,18 @@ const QuickGuideForm = () => {
     additionalInfo: "",
   });
 
+  useEffect(() => {
+    setFormData((prevData) => ({
+      ...prevData,
+      places: selectedLocations,
+    }));
+  }, [selectedLocations]);
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
       [name]: type === "checkbox" ? checked : value,
-    });
-  };
-
-  const handleAddPlace = () => {
-    setFormData({
-      ...formData,
-      places: [...formData.places, ""],
     });
   };
 
@@ -36,16 +40,6 @@ const QuickGuideForm = () => {
     });
   };
 
-  const handlePlaceChange = (index, value) => {
-    const newPlaces = formData.places.map((place, i) =>
-      i === index ? value : place
-    );
-    setFormData({
-      ...formData,
-      places: newPlaces,
-    });
-  };
-
   const handleLanguageChange = (index, value) => {
     const newLanguages = formData.languages.map((language, i) =>
       i === index ? value : language
@@ -53,14 +47,6 @@ const QuickGuideForm = () => {
     setFormData({
       ...formData,
       languages: newLanguages,
-    });
-  };
-
-  const handleRemovePlace = (index) => {
-    const newPlaces = formData.places.filter((_, i) => i !== index);
-    setFormData({
-      ...formData,
-      places: newPlaces,
     });
   };
 
@@ -91,22 +77,11 @@ const QuickGuideForm = () => {
       <form onSubmit={handleSubmit} className="guide-form">
         <div className="form-group places-group">
           <label>Places to visit:</label>
-          {formData.places.map((place, index) => (
-            <div key={index} className="input-group">
-              <input
-                type="text"
-                value={place}
-                onChange={(e) => handlePlaceChange(index, e.target.value)}
-                required
-              />
-              <button type="button" onClick={() => handleRemovePlace(index)}>
-                -
-              </button>
-            </div>
-          ))}
-          <button type="button" onClick={handleAddPlace} className="add-button">
-            +
-          </button>
+          <ul>
+            {formData.places.map((place, index) => (
+              <li key={index}>{place}</li>
+            ))}
+          </ul>
         </div>
         <div className="form-group">
           <label>Number of people: {formData.numberOfPeople}</label>

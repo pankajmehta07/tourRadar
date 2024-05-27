@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Profile from "./Components/Profile";
 import QuickGuideForm from "./QuickGuideForm";
+import LocationSelection from "./LocationSelection";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
@@ -13,7 +14,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/quick-guide" element={<QuickGuideForm />} />
+          <Route path="/location-selection" element={<LocationSelection />} />
+          <Route path="/quick-guide-form" element={<QuickGuideForm />} />
         </Routes>
       </div>
     </BrowserRouter>
