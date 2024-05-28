@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 import "./LocationSelection.css";
+import BackHome from "./Components/BackHome";
 
 const LocationSelection = () => {
   const [query, setQuery] = useState("");
@@ -16,7 +17,7 @@ const LocationSelection = () => {
   const handleSearch = async () => {
     if (query.trim() === "") return;
 
-    const apiKey = "your_api_key_of_opencage"; // Replace this with your OpenCage API key. Maile pahila ko disable haneko xu hai. jhukkera active api key nai halexu, ani generic high entropy secret leaked vanyo
+    const apiKey = "your_api_key"; // Replace this with your OpenCage API key. Maile pahila ko disable haneko xu hai. jhukkera active api key nai halexu, ani generic high entropy secret leaked vanyo
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(query)}&key=${apiKey}`;
 
     try {
@@ -55,6 +56,7 @@ const LocationSelection = () => {
 
   return (
     <div className="location-selection">
+    <BackHome />
       <h2>Select Locations</h2>
       
       <MapContainer center={[27.7, 85.3]} zoom={12} scrollWheelZoom={false} style={{ height: "500px", width: "500px" }}>

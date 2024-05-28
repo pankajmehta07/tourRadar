@@ -3,6 +3,7 @@ import styles from "./Profile.module.css";
 import placeImage1 from "../assets/images.jpg";
 import PlaceCard from "./PlaceCard";
 import ImageUpload from "./ImageUpload";
+import BackHome from "./BackHome";
 
 const Profile = () => {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -52,6 +53,7 @@ const Profile = () => {
 
   return (
     <div className={styles["profile-container"]}>
+    <BackHome />
       <div className={styles["profile-header"]}>
         <ImageUpload header={true} isEditMode={isEditMode} />
         <div className={styles["image-and-details"]}>

@@ -6,6 +6,7 @@ import Profile from "./Components/Profile";
 import QuickGuideForm from "./QuickGuideForm";
 import LocationSelection from "./LocationSelection";
 import "react-toastify/dist/ReactToastify.css";
+import BackHome from "./Components/BackHome";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/" element={<BackHome />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/location-selection" element={<LocationSelection />} />
           <Route path="/quick-guide-form" element={<QuickGuideForm />} />
