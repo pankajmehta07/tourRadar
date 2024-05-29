@@ -3,6 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { useLocation } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./QuickGuideForm.css";
+import BackHome from "./Components/BackHome";
 
 const QuickGuideForm = () => {
   const location = useLocation();
@@ -73,6 +74,7 @@ const QuickGuideForm = () => {
 
   return (
     <div className="form-container">
+    <BackHome />
       <h2>Quick Guide Request</h2>
       <form onSubmit={handleSubmit} className="guide-form">
         <div className="form-group places-group">
