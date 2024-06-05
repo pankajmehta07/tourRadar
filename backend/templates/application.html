@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<div class="container-fluid my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-11 card">
+            <div class="card-header">
+                <h3 class="text-center">Application Form</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="signup" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="stdname" class="col-form-label ">First Name:</label>
+                                <input id="stdname" required type="text" name="fname" autocomplete="stdname"
+                                    autofocus="autofocus" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="stdname" class="col-form-label ">Last Name:</label>
+                                <input id="stdname" required type="text" name="lname" autocomplete="stdname"
+                                    autofocus="autofocus" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="stdname" class="col-form-label ">gender:</label>
+                                <input id="stdname" required type="text" name="gender" autocomplete="stdname"
+                                    autofocus="autofocus" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="stdname" class="col-form-label ">Phone:</label>
+                                <input id="stdname" required type="tel" name="phone" autocomplete="stdname"
+                                    autofocus="autofocus" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="email" class="col-form-label">Email Address</label>
+                                <input id="email" required type="email" name="email" autocomplete="email"
+                                    class="form-control ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-4 text-center">
+                            <div class="form-group">
+                                <label for="image" class="col-form-label">Cover Image</label>
+                                <input id="image" type="file" required accept="image/*" name="cover"
+                                    class="form-control ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-4 text-center">
+                            <div class="form-group">
+                                <label for="image" class="col-form-label">Profile Image</label>
+                                <input id="image" type="file" required accept="image/*" name="profile"
+                                    class="form-control ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Submit
+                            </button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
