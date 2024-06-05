@@ -186,3 +186,5 @@ Thumbs.db
 *.iws
 .idea/
 out/
+templates
+templates/*

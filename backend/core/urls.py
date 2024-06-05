@@ -19,6 +19,8 @@ from django.urls import path
 from tourRadar import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('signup', views.signUP),
+    path('', views.index,name="index"),
+    path('media/<path:path>/', views.showImage,name="show Image"),
+    path('signup', views.signUP,name="signup"),
+    path('login', views.Login,name="login"),
 ]
