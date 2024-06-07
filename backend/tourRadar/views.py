@@ -27,7 +27,7 @@ def signUP(request):
         user = User(first_name=fname,last_name=lname, email=email)
         user.save()
         id = user.id 
-        username = fname+lname+str(id)
+        username = fname.replace(" ",'').lower()+lname.replace(" ",'').lower()+str(id)
         user.username = username
         user.set_password(password)
         user.save()
