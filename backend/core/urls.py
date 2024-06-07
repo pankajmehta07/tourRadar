@@ -23,4 +23,5 @@ urlpatterns = [
     path('media/<path:path>/', views.showImage,name="show Image"),
     path('signup', views.signUP,name="signup"),
     path('login', views.Login,name="login"),
+    path('info', views.profileData,name="Profile Data"),
 ]

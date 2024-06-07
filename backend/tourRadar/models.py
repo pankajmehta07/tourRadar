@@ -7,6 +7,7 @@ class Profile(models.Model):
     gender = models.CharField(max_length=10,default='')
     country = models.CharField(max_length=50,default='')
     type = models.CharField(max_length=10,default='tourist')
+    languages = models.CharField(max_length=256,default='')
     phone = models.IntegerField()
     profilePic = models.ImageField(upload_to="Images/PP",default="")
     coverPic = models.ImageField(upload_to="Images/CP",default="")
